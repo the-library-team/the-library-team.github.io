@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Settings - The Library</title>
+    <link rel="stylesheet" type="text/css" href="./asset/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="./asset/css/stdcontent.css" />
+    <link rel="icon" type="image/x-icon" href="./asset/favicon_default.ico" />
+  </head>
+  <body>
+    <div id="header" class="header"></div>
+    <div class="content-area">
+      <div id="content" class="content">
+        <div class="simple-body">
+          <div style="text-align:left;">
+            <h1>Settings</h1>
+            <div style="padding-left:40px;">
+              <h2>Color Theme</h2>
+              <div class="simple-container" style="flex-wrap: wrap;">
+                <button class="std-button" onclick="setSetting('color', 'towr')">Tower</button>
+                <button class="std-button" onclick="setSetting('color', 'yorh')">YoRHa</button>
+                <button class="std-button" onclick="setSetting('color', 'repl')">Village</button>
+                <button class="std-button" onclick="setSetting('color', 'shde')">Shadowlord</button>
+                <button class="std-button" onclick="setSetting('color', 'dod1')">Angelus</button>
+                <button class="std-button" onclick="setSetting('color', 'dod2')">Legna</button>
+                <button class="std-button" onclick="setSetting('color', 'dod3')">Mikhail</button>
+                <button class="std-button" onclick="setSetting('color', 'acrd')">Accord</button>
+                <button class="std-button" onclick="setSetting('color', 'rein')">Cage</button>
+              </div>
+              <h2>Version Preferences</h2>
+              <div class="simple-container">
+                <button class="std-button" onclick="setSetting('dodver', 'drak')">Drakengard</button>
+                <button class="std-button" style="min-width:22%" onclick="setSetting('dodver', 'dod')">Drag-On Dragoon</button>
+              </div>
+              <br>
+              <div class="simple-container">
+                <button class="std-button" onclick="setSetting('nierver', 'repl')">Replicant (OG)</button>
+                <button class="std-button" onclick="setSetting('nierver', 'gest')">Gestalt</button>
+                <button class="std-button" onclick="setSetting('nierver', 'west')">NIER (Western)</button>
+                <button class="std-button" style="min-width:25%" onclick="setSetting('nierver', '122')">ver.1.22474487139...</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="sidebar" class="sidebar"></div>
+    </div>
+    <script src="./asset/js/main.js"></script>
+  </body>
+</html>

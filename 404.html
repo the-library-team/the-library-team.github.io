@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>404 - The Library</title>
+    <div id="css">
+
+    </div>
+  </head>
+  <body>
+    <div id="header" class="header"></div>
+    <div class="content-area">
+      <div id="content" class="content">
+        <div class="simple-body">
+          <h3 style="text-align: left;">Error - 404</h2>
+          <div class="block-container">
+            <h1>Whoops!</h1>
+            <p>Sorry! We couldn't find the item you were looking for...</p>
+            <p>Are you sure you're searching in the right place?</p>
+            <br/>
+            <a>
+              <p>If you're really sure this is a mistake, please tell us on Github!</p>
+              <img src="./asset/img/librarian.png" style="max-height:150px">
+            </a>
+          </div>
+        </div>
+      </div>
+      <div id="sidebar" class="sidebar"></div>
+    </div>
+    <script>
+      let dir = window.location.href; // Get current URL
+      let dir_array = dir.split("/").reverse(); // Split by directory (/)
+      let directory_escapes = ""; // Declare variable to hold escape
+      // Count url parts till main directory
+      for (let i = 0; i < dir_array.length; i++) {
+        if (dir_array[i] == "the-library") {
+          break;
+        }
+        directory_escapes += ".";
+      }
+      var main = document.createElement('script');
+      main.setAttribute('src', directory_escapes+'/asset/js/main.js')
+      document.body.appendChild(main)
+      document.getElementById("css").innerHTML = `
+      <link rel="stylesheet" type="text/css" href="`+directory_escapes+`/asset/css/main.css" />
+      <link rel="stylesheet" type="text/css" href="`+directory_escapes+`/asset/css/stdcontent.css" />
+      <link rel="icon" type="image/x-icon" href="`+directory_escapes+`/asset/favicon_default.ico" />
+      `
+    </script>
+  </body>
+</html>

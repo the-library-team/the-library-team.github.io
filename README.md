@@ -1,0 +1,2 @@
+# The Library - A Preservation of DrakeNier
+This is a build of this website from in the middle of it's initial development. This is not meant to be accessible to the public. If you're reading this, we have likely released a major build and have forgotten to private this. Our bad.

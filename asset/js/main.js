@@ -17,7 +17,7 @@ function getFromRoot() {
   let directory_escapes = ""; // Declare variable to hold escape
   // Count url parts till main directory
   for (let i = 0; i < dir_array.length; i++) {
-    if (dir_array[i] == "the-library") {
+    if (dir_array[i].includes("the-library")) {
       break;
     }
     directory_escapes += ".";
@@ -34,6 +34,9 @@ function loadUI(){
   </div>
   <a href="`+root+`/settings.html"class="header-button" style="margin-right: 10px; float: right;">
     <img src="`+root+`/asset/img/librarian.png">
+  </a>
+  <a id="github-logo" href="https://github.com/the-library-team" style="margin-right: 10px; float: right;">
+    <img src="`+root+`/asset/img/github_black.svg">
   </a>
   `
   document.getElementById("sidebar").innerHTML = `
@@ -65,60 +68,70 @@ function loadUI(){
 }
 
 function setColor(color) {
+  root = getFromRoot();
   if (color == "towr") {
     document.documentElement.style.setProperty('--main-ui', '#d4d4d4ff');
     document.documentElement.style.setProperty('--secondary-ui', '#aeadadff');
     document.documentElement.style.setProperty('--secondary-ui-hover', '#818181ff');
     document.documentElement.style.setProperty('--ui-text', '#424242ff');
     document.documentElement.style.setProperty('--background', '#ffffffff');
+    document.getElementById("github-logo").innerHTML = "<img id='github-logo' src='"+root+"/asset/img/github_black.svg'>";
   } else if (color == "yorh") {
     document.documentElement.style.setProperty('--main-ui', '#121212ff');
     document.documentElement.style.setProperty('--secondary-ui', '#353535ff');
     document.documentElement.style.setProperty('--secondary-ui-hover', '#282828ff');
     document.documentElement.style.setProperty('--ui-text', '#ffffffff');
     document.documentElement.style.setProperty('--background', '#1d1d1dff');
+    document.getElementById("github-logo").innerHTML = "<img id='github-logo' src='"+root+"/asset/img/github_white.svg'>";
   } else if (color == "repl") {
     document.documentElement.style.setProperty('--main-ui', '#3f220cff');
     document.documentElement.style.setProperty('--secondary-ui', '#975e2bff');
     document.documentElement.style.setProperty('--secondary-ui-hover', '#5a3311ff');
     document.documentElement.style.setProperty('--ui-text', '#000000ff');
     document.documentElement.style.setProperty('--background', '#c7c7c7ff');
+    document.getElementById("github-logo").innerHTML = "<img id='github-logo' src='"+root+"/asset/img/github_black.svg'>";
   } else if (color == "shde") {
     document.documentElement.style.setProperty('--main-ui', '#232323ff');
     document.documentElement.style.setProperty('--secondary-ui', '#bb9611ff');
     document.documentElement.style.setProperty('--secondary-ui-hover', '#946a00ff');
     document.documentElement.style.setProperty('--ui-text', '#ffffffff');
     document.documentElement.style.setProperty('--background', '#131313ff');
+    document.getElementById("github-logo").innerHTML = "<img id='github-logo' src='"+root+"/asset/img/github_white.svg'>";
   } else if (color == "dod1") {
     document.documentElement.style.setProperty('--main-ui', '#751d02ff');
     document.documentElement.style.setProperty('--secondary-ui', '#ba2b29ff');
     document.documentElement.style.setProperty('--secondary-ui-hover', '#942517ff');
     document.documentElement.style.setProperty('--ui-text', '#ffffffff');
     document.documentElement.style.setProperty('--background', '#32180dff');
+    document.getElementById("github-logo").innerHTML = "<img id='github-logo' src='"+root+"/asset/img/github_white.svg'>";
   } else if (color == "dod2") {
     document.documentElement.style.setProperty('--main-ui', '#363473ff');
     document.documentElement.style.setProperty('--secondary-ui', '#e74c29ff');
     document.documentElement.style.setProperty('--secondary-ui-hover', '#a82409ff');
     document.documentElement.style.setProperty('--ui-text', '#ffffffff');
     document.documentElement.style.setProperty('--background', '#030032ff');
+    document.getElementById("github-logo").innerHTML = "<img id='github-logo' src='"+root+"/asset/img/github_white.svg'>";
   } else if (color == "dod3") {
     document.documentElement.style.setProperty('--main-ui', '#7b3133ff');
     document.documentElement.style.setProperty('--secondary-ui', '#b52c33ff');
     document.documentElement.style.setProperty('--secondary-ui-hover', '#8c2025ff');
     document.documentElement.style.setProperty('--ui-text', '#000000ff');
     document.documentElement.style.setProperty('--background', '#d0cfcfff');
+    document.getElementById("github-logo").innerHTML = "<img id='github-logo' src='"+root+"/asset/img/github_black.svg'>";
   } else if (color == "acrd") {
     document.documentElement.style.setProperty('--main-ui', '#2C2825');
     document.documentElement.style.setProperty('--secondary-ui', '#AF7956');
     document.documentElement.style.setProperty('--secondary-ui-hover', '#2C2825');
     document.documentElement.style.setProperty('--ui-text', '#EBEAE7');
     document.documentElement.style.setProperty('--background', '#25211E');
+    document.getElementById("github-logo").innerHTML = "<img id='github-logo' src='"+root+"/asset/img/github_white.svg'>";
   } else if (color == "rein") {
     document.documentElement.style.setProperty('--main-ui', '#635D5A');
     document.documentElement.style.setProperty('--secondary-ui', '#908881');
     document.documentElement.style.setProperty('--secondary-ui-hover', '#79716bff');
     document.documentElement.style.setProperty('--ui-text', '#000000ff');
     document.documentElement.style.setProperty('--background', '#CAC1B6');
+    document.getElementById("github-logo").innerHTML = "<img id='github-logo' src='"+root+"/asset/img/github_black.svg'>";
   }
 }
 
@@ -128,14 +141,14 @@ function setSetting(setting, value) {
     setColor(value);
   } else if (setting == "dodver") {
     localStorage.setItem(setting, value);
-    setVersiOn(value);
+    setVersion(value);
   } else if (setting == "nierver") {
     localStorage.setItem(setting, value);
-    setVersiOn(value);
+    setVersion(value);
   }
 }
 
-function setVersiOn(ver) {
+function setVersion(ver) {
   root = getFromRoot();
   if (ver == "drak") {
     document.getElementById("dod-sidebar").innerHTML = "<img src='"+root+"/asset/img/logo/dod1_en.svg' alt='Drakengard Logo'>";
@@ -172,13 +185,13 @@ function OnLoad() {
   }
 
   if (localStorage.getItem('dodver')) {
-    setVersiOn(localStorage.getItem('dodver'));
+    setVersion(localStorage.getItem('dodver'));
   } else {
     setSetting('dodver', 'drak');
   }
 
   if (localStorage.getItem('nierver')) {
-    setVersiOn(localStorage.getItem('nierver'));
+    setVersion(localStorage.getItem('nierver'));
   } else {
     setSetting('nierver', '122');
   }

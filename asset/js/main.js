@@ -32,11 +32,11 @@ function loadUI(){
   <div class="header-button" onclick="toggleSidebar()">
     <img src="`+root+`/asset/img/librarian.png">
   </div>
-  <a href="`+root+`/settings.html"class="header-button" style="margin-right: 10px; float: right;">
+  <a href="`+root+`/settings.html" class="header-button" style="margin-right: 10px; float: right;">
     <img src="`+root+`/asset/img/librarian.png">
   </a>
-  <a id="github-logo" href="https://github.com/the-library-team" style="margin-right: 10px; float: right;">
-    <img src="`+root+`/asset/img/github_black.svg">
+  <a id="github-logo" class="header-button" href="https://github.com/the-library-team" style="margin-right: 10px; float: right;">
+    <img style="height:95%; object-fit:scale-down;" src="`+root+`/asset/img/github_black.svg">
   </a>
   `
   document.getElementById("sidebar").innerHTML = `
@@ -46,23 +46,23 @@ function loadUI(){
   <a href="`+root+`/guide.html" class="sidebar-link" style="height:75px; text-align: center;">
     <p><b>Guide</b></p>
   </a>
-  <a href="`+root+`/dod1/" id="dod-sidebar" class="sidebar-link">
-    <img src="`+root+`/asset/img/logo/dod1_en.svg" alt="Drakengard Logo">
+  <a href="`+root+`/dod1/" class="sidebar-link">
+    <img class="dod1-svg-switch" src="`+root+`/asset/img/logo/dod1_en.svg" alt="Drakengard Logo">
   </a>
   <a href="`+root+`/dod2/" id="dod2-sidebar" class="sidebar-link">
-    <img src="`+root+`/asset/img/logo/dod2_en.svg" alt="Drakengard 2 Logo">
+    <img class="dod2-svg-switch" src="`+root+`/asset/img/logo/dod2_en.svg" alt="Drakengard 2 Logo">
   </a>
   <a href="`+root+`/nier/" id="nier-sidebar" class="sidebar-link">
-    <img src="`+root+`/asset/img/logo/nier_122.png" alt="NieR Replicant ver.1.22474487139 Logo">
+    <img class="nier-svg-switch" src="`+root+`/asset/img/logo/nier_122.png" alt="NieR Replicant ver.1.22474487139 Logo">
   </a>
   <a href="`+root+`/dod3/" id="dod3-sidebar" class="sidebar-link">
-    <img src="`+root+`/asset/img/logo/dod3_en.png" alt="Drakengard 3 Logo">
+    <img class="dod3-svg-switch" src="`+root+`/asset/img/logo/dod3_en.png" alt="Drakengard 3 Logo">
   </a>
   <a href="`+root+`/auto/" class="sidebar-link">
-    <img src="`+root+`/asset/img/logo/nier_auto.png" alt="NieR:Automata Logo">
+    <img src="`+root+`/asset/img/logo/auto.png" alt="NieR:Automata Logo">
   </a>
   <a href="`+root+`/rein/" class="sidebar-link">
-    <img src="`+root+`/asset/img/logo/nier_rein.png" alt="NieR Reincarnation Logo">
+    <img src="`+root+`/asset/img/logo/rein.png" alt="NieR Reincarnation Logo">
   </a>
   <div class="sidebar-link" style="background-color:var(--main-ui)"></div>`
 }
@@ -75,63 +75,63 @@ function setColor(color) {
     document.documentElement.style.setProperty('--secondary-ui-hover', '#818181ff');
     document.documentElement.style.setProperty('--ui-text', '#424242ff');
     document.documentElement.style.setProperty('--background', '#ffffffff');
-    document.getElementById("github-logo").innerHTML = "<img id='github-logo' src='"+root+"/asset/img/github_black.svg'>";
+    document.getElementById("github-logo").innerHTML = "<img id='github-logo' style='height:95%;' src='"+root+"/asset/img/github_black.svg'>";
   } else if (color == "yorh") {
     document.documentElement.style.setProperty('--main-ui', '#121212ff');
     document.documentElement.style.setProperty('--secondary-ui', '#353535ff');
     document.documentElement.style.setProperty('--secondary-ui-hover', '#282828ff');
     document.documentElement.style.setProperty('--ui-text', '#ffffffff');
     document.documentElement.style.setProperty('--background', '#1d1d1dff');
-    document.getElementById("github-logo").innerHTML = "<img id='github-logo' src='"+root+"/asset/img/github_white.svg'>";
+    document.getElementById("github-logo").innerHTML = "<img id='github-logo' style='height:95%;' src='"+root+"/asset/img/github_white.svg'>";
   } else if (color == "repl") {
     document.documentElement.style.setProperty('--main-ui', '#3f220cff');
     document.documentElement.style.setProperty('--secondary-ui', '#975e2bff');
     document.documentElement.style.setProperty('--secondary-ui-hover', '#5a3311ff');
     document.documentElement.style.setProperty('--ui-text', '#000000ff');
     document.documentElement.style.setProperty('--background', '#c7c7c7ff');
-    document.getElementById("github-logo").innerHTML = "<img id='github-logo' src='"+root+"/asset/img/github_black.svg'>";
+    document.getElementById("github-logo").innerHTML = "<img id='github-logo' style='height:95%;' src='"+root+"/asset/img/github_black.svg'>";
   } else if (color == "shde") {
     document.documentElement.style.setProperty('--main-ui', '#232323ff');
     document.documentElement.style.setProperty('--secondary-ui', '#bb9611ff');
     document.documentElement.style.setProperty('--secondary-ui-hover', '#946a00ff');
     document.documentElement.style.setProperty('--ui-text', '#ffffffff');
     document.documentElement.style.setProperty('--background', '#131313ff');
-    document.getElementById("github-logo").innerHTML = "<img id='github-logo' src='"+root+"/asset/img/github_white.svg'>";
+    document.getElementById("github-logo").innerHTML = "<img id='github-logo' style='height:95%;' src='"+root+"/asset/img/github_white.svg'>";
   } else if (color == "dod1") {
     document.documentElement.style.setProperty('--main-ui', '#751d02ff');
     document.documentElement.style.setProperty('--secondary-ui', '#ba2b29ff');
     document.documentElement.style.setProperty('--secondary-ui-hover', '#942517ff');
     document.documentElement.style.setProperty('--ui-text', '#ffffffff');
     document.documentElement.style.setProperty('--background', '#32180dff');
-    document.getElementById("github-logo").innerHTML = "<img id='github-logo' src='"+root+"/asset/img/github_white.svg'>";
+    document.getElementById("github-logo").innerHTML = "<img id='github-logo' style='height:95%;' src='"+root+"/asset/img/github_white.svg'>";
   } else if (color == "dod2") {
     document.documentElement.style.setProperty('--main-ui', '#363473ff');
     document.documentElement.style.setProperty('--secondary-ui', '#e74c29ff');
     document.documentElement.style.setProperty('--secondary-ui-hover', '#a82409ff');
     document.documentElement.style.setProperty('--ui-text', '#ffffffff');
     document.documentElement.style.setProperty('--background', '#030032ff');
-    document.getElementById("github-logo").innerHTML = "<img id='github-logo' src='"+root+"/asset/img/github_white.svg'>";
+    document.getElementById("github-logo").innerHTML = "<img id='github-logo' style='height:95%;' src='"+root+"/asset/img/github_white.svg'>";
   } else if (color == "dod3") {
     document.documentElement.style.setProperty('--main-ui', '#7b3133ff');
     document.documentElement.style.setProperty('--secondary-ui', '#b52c33ff');
     document.documentElement.style.setProperty('--secondary-ui-hover', '#8c2025ff');
     document.documentElement.style.setProperty('--ui-text', '#000000ff');
     document.documentElement.style.setProperty('--background', '#d0cfcfff');
-    document.getElementById("github-logo").innerHTML = "<img id='github-logo' src='"+root+"/asset/img/github_black.svg'>";
+    document.getElementById("github-logo").innerHTML = "<img id='github-logo' style='height:95%;' src='"+root+"/asset/img/github_black.svg'>";
   } else if (color == "acrd") {
     document.documentElement.style.setProperty('--main-ui', '#2C2825');
     document.documentElement.style.setProperty('--secondary-ui', '#AF7956');
     document.documentElement.style.setProperty('--secondary-ui-hover', '#2C2825');
     document.documentElement.style.setProperty('--ui-text', '#EBEAE7');
     document.documentElement.style.setProperty('--background', '#25211E');
-    document.getElementById("github-logo").innerHTML = "<img id='github-logo' src='"+root+"/asset/img/github_white.svg'>";
+    document.getElementById("github-logo").innerHTML = "<img id='github-logo' style='height:95%;' src='"+root+"/asset/img/github_white.svg'>";
   } else if (color == "rein") {
     document.documentElement.style.setProperty('--main-ui', '#635D5A');
     document.documentElement.style.setProperty('--secondary-ui', '#908881');
     document.documentElement.style.setProperty('--secondary-ui-hover', '#79716bff');
     document.documentElement.style.setProperty('--ui-text', '#000000ff');
     document.documentElement.style.setProperty('--background', '#CAC1B6');
-    document.getElementById("github-logo").innerHTML = "<img id='github-logo' src='"+root+"/asset/img/github_black.svg'>";
+    document.getElementById("github-logo").innerHTML = "<img id='github-logo' style='height:95%;' src='"+root+"/asset/img/github_black.svg'>";
   }
 }
 
@@ -141,38 +141,46 @@ function setSetting(setting, value) {
     setColor(value);
   } else if (setting == "dodver") {
     localStorage.setItem(setting, value);
-    setVersion(value);
+    setDODVersion(value);
   } else if (setting == "nierver") {
+    localStorage.setItem(setting, value);
+    setNieRVersion(value);
+  } else if (setting == "lowquality") {
+    localStorage.setItem(setting, value);
+    setVersion(value);
+  } else if (setting == "medquality") {
+    localStorage.setItem(setting, value);
+    setVersion(value);
+  } else if (setting == "higquality") {
+    localStorage.setItem(setting, value);
+    setVersion(value);
+  } else if (setting == "vhiquality") {
     localStorage.setItem(setting, value);
     setVersion(value);
   }
 }
 
-function setVersion(ver) {
+function setDODVersion(ver) {
   root = getFromRoot();
-  if (ver == "drak") {
-    document.getElementById("dod-sidebar").innerHTML = "<img src='"+root+"/asset/img/logo/dod1_en.svg' alt='Drakengard Logo'>";
-    if (document.getElementById("dod1-hero") != null) {
-      document.getElementById("dod1-hero").innerHTML = "<img src='"+root+"/asset/img/logo/dod1_en.svg' alt='Drakengard Logo'>";
-    }
-    document.getElementById("dod2-sidebar").innerHTML = "<img src='"+root+"/asset/img/logo/dod2_en.svg' alt='Drakengard 2 Logo'>";
-    document.getElementById("dod3-sidebar").innerHTML = "<img src='"+root+"/asset/img/logo/dod3_en.png' alt='Drakengard 3 Logo'>";
-  } else if (ver == "dod") {
-    document.getElementById("dod-sidebar").innerHTML = "<img src='"+root+"/asset/img/logo/dod1_jp.svg' alt='Drag-On Dragoon Logo'>";
-    if (document.getElementById("dod1-hero") != null) {
-      document.getElementById("dod1-hero").innerHTML = "<img src='"+root+"/asset/img/logo/dod1_jp.svg' alt='Drag-On Dragoon Logo'>";
-    }
-    document.getElementById("dod2-sidebar").innerHTML = "<img src='"+root+"/asset/img/logo/dod2_jp.svg' alt='Drag-On Dragoon 2 Logo'>";
-    document.getElementById("dod3-sidebar").innerHTML = "<img src='"+root+"/asset/img/logo/dod3_jp.png' alt='Drag-On Dragoon 3 Logo'>";
+  var dod1 = document.getElementsByClassName("dod1-svg-switch");
+  var dod2 = document.getElementsByClassName("dod2-svg-switch");
+  var dod3 = document.getElementsByClassName("dod3-svg-switch");
+  for (var i = 0; i < dod1.length; i++) {
+    dod1[i].src = root+"/asset/img/logo/dod1_"+ver+".svg";
   }
-  if (ver == "repl") {
-    document.getElementById("nier-sidebar").innerHTML = "<img src='"+root+"/asset/img/logo/nier_replicant.png' alt='NieR Replicant Logo'>";
-  } else if (ver == "gest") {
-    document.getElementById("nier-sidebar").innerHTML = "<img src='"+root+"/asset/img/logo/nier_gestalt.png' alt='NieR Gestalt Logo'>";
-  } else if (ver == "west") {
-    document.getElementById("nier-sidebar").innerHTML = "<img src='"+root+"/asset/img/logo/nier_us.png' alt='NieR Western Logo'>";
-  } else if (ver == "122") {
-    document.getElementById("nier-sidebar").innerHTML = "<img src='"+root+"/asset/img/logo/nier_122.png' alt='NieR Replicant 1.22 Logo'>";
+  for (var i = 0; i < dod2.length; i++) {
+    dod2[i].src = root+"/asset/img/logo/dod2_"+ver+".svg";
+  }
+  for (var i = 0; i < dod3.length; i++) {
+    dod3[i].src = root+"/asset/img/logo/dod3_"+ver+".png";
+  }
+}
+
+function setNieRVersion(ver) {
+  root = getFromRoot();
+  var nier = document.getElementsByClassName("nier-svg-switch");
+  for (var i = 0; i < nier.length; i++) {
+    nier[i].src = root+"/asset/img/logo/nier_"+ver+".png";
   }
 }
 
@@ -184,14 +192,20 @@ function OnLoad() {
     setSetting('color', 'towr');
   }
 
+  //if (localStorage.getItem('quality')) {
+  //  setVersion(localStorage.getItem('quality'));
+  //} else {
+  //  setSetting('quality', 'medquality');
+  //}
+
   if (localStorage.getItem('dodver')) {
-    setVersion(localStorage.getItem('dodver'));
+    setDODVersion(localStorage.getItem('dodver'));
   } else {
-    setSetting('dodver', 'drak');
+    setSetting('dodver', 'en');
   }
 
   if (localStorage.getItem('nierver')) {
-    setVersion(localStorage.getItem('nierver'));
+    setNieRVersion(localStorage.getItem('nierver'));
   } else {
     setSetting('nierver', '122');
   }
